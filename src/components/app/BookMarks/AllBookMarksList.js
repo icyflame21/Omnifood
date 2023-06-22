@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import IconButton from 'components/common/IconButton';
 import AppContext from 'context/Context';
 import { useEffect } from 'react';
+import _ from 'lodash';
 
 const BookmarksFilterDropdownItem = ({ active, children, ...rest }) => (
   <Dropdown.Item
@@ -41,7 +42,6 @@ const AllBookMarksList = () => {
   useEffect(() => {
     document.title = "Omnifood | All Bookmarks";
   }, [])
-
 
   return (
     <>
@@ -79,7 +79,7 @@ const AllBookMarksList = () => {
                     <FontAwesomeIcon icon="sliders-h" className='text-warning' />
                   </Dropdown.Toggle>
                   <Dropdown.Menu className="py-2" align='start'>
-                    {showBookMarks.map(filter => (
+                    {_.uniqBy(showBookMarks, 'strArea').map(filter => (
                       <BookmarksFilterDropdownItem
                         active={filter.idMeal === currentFilter}
                         key={filter.idMeal}
