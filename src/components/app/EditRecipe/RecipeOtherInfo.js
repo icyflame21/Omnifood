@@ -109,9 +109,10 @@ const RecipeOtherInfo = ({ control, register, errors, watch }) => {
           <Controller
             name="strArea"
             rules={{
-              required: "*Required",
               validate: value => {
-                return value.length <= 5 || "You can select up to 5 options";
+                if(value){
+                  return value.length <= 5 || "You can select up to 5 options";
+                } else return
               }
             }}
             defaultValue={[]}

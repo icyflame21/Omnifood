@@ -20,7 +20,7 @@ const DangerZone = () => {
   const deleteAccount = async () => {
     handleLoading(true)
     handleProfileLoading(true)
-    const confirmation = window.confirm('Are you sure you want to delete your account? This action is irreversible and all your data will be permanently deleted.');
+    const confirmation = window.confirm('Are you sure you want to delete your account? \nThis action is irreversible and all your data will be permanently deleted.');
     if (confirmation) {
       try {
         deleteUser(firestoreAuth.currentUser).then(() => {
@@ -54,6 +54,9 @@ const DangerZone = () => {
         handleLoading(false)
         handleProfileLoading(false)
       }
+    } else {
+      handleLoading(false)
+      handleProfileLoading(false)
     }
   }
   return (

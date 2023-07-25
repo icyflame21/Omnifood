@@ -3,7 +3,7 @@ import { Tab, Nav, Row, Col, Table } from 'react-bootstrap';
 import createMarkup from 'helpers/createMarkup';
 import ReactYoutubePlayer from 'react-player/youtube';
 
-const RecipeDetailsFooter = ({ CreatedRecipe:{
+const RecipeDetailsFooter = ({ CreatedRecipe: {
   strInstructions,
   ingredientsData,
   strSource
@@ -44,14 +44,14 @@ const RecipeDetailsFooter = ({ CreatedRecipe:{
               Ingredients
             </Nav.Link>
           </Nav.Item>
-          <Nav.Item>
+          {strSource ? <Nav.Item>
             <Nav.Link
               eventKey="source"
               className="px-2 px-md-3 cursor-pointer outline-none"
             >
               Source
             </Nav.Link>
-          </Nav.Item>
+          </Nav.Item> : null}
         </Nav>
         <Tab.Content>
           <Tab.Pane eventKey="instruction">
@@ -74,7 +74,7 @@ const RecipeDetailsFooter = ({ CreatedRecipe:{
               </tbody>
             </Table>
           </Tab.Pane>
-          <Tab.Pane eventKey="source">
+          {strSource && <Tab.Pane eventKey="source">
             <Row className="mt-3">
               <Col lg={12} >
                 <ReactYoutubePlayer
@@ -86,7 +86,7 @@ const RecipeDetailsFooter = ({ CreatedRecipe:{
                 />
               </Col>
             </Row>
-          </Tab.Pane>
+          </Tab.Pane>}
         </Tab.Content>
       </Tab.Container>
     </div>

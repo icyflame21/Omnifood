@@ -55,7 +55,6 @@ const RecipeDetails = ({ register, watch, errors, control, editorKey }) => {
                 placeholder="Provide a youtube URL"
                 isInvalid={!!errors.strSource}
                 {...register('strSource', {
-                  required: '*Required',
                   pattern: {
                     value:
                       /^(https?\:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/,

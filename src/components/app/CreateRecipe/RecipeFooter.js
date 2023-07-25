@@ -5,7 +5,7 @@ const RecipeFooter = () => {
   return (
     <Card>
       <Card.Body>
-        <Row className="flex-end">
+        <Row className="flex-end ">
           <Col></Col>
           <Col xs="auto">
             <Button
