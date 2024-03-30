@@ -8,7 +8,8 @@ It is a global recipe search website that was developed to provide users with a 
 ## Tech Stack 💻
 
 - React
-- CSS Libraries (Bootstrap, MUI), SCSS
+- CSS Libraries (Bootstrap, MUI)
+- SCSS
 - Firebase (Products integrated)
     - Authentication (Email Link (Passwordless sign-in) and Email/Password, Google, Facebook)
     - Firestore Database
